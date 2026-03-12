@@ -33,7 +33,6 @@ clean:
 fclean: clean
 	@echo "Cleaning executable..."
 	$(RM) $(NAME)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 norm:
 	@ERR_COUNT=$$(norminette src/ includes/ textures/ | grep "Error" | wc -l); \
