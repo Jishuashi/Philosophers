@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/12 15:37:11 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/17 15:55:17 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/philosophers.h"
+#ifndef PHILO_H
+# define PHILO_H
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-int	main(void)
-{
-	printf("Hello word!");
-}
+void	print_err(char *str);
+void	check_arg(int ac, char *av[]);
+
+#endif

@@ -1,4 +1,4 @@
-NAME            = philosophers
+NAME            = philo
 
 LIBFT           = $(LIBFT_DIR)/libft.a
 
@@ -8,7 +8,7 @@ CFLAGS          = -Wall -Wextra -Werror -g
 RM              = rm -rf
 OBJ_DIR         = obj
 
-SRCS            = src/philosophers.c
+SRCS            = src/philo.c src/utils/print_err.c	src/check_arg.c
 
 OBJS            = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 
