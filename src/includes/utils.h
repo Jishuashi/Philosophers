@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/20 17:56:38 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/20 17:37:23 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/20 17:45:00 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/philo.h"
+#ifndef UTILS_H
+# define UTILS_H
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-int	main(int ac, char *av[])
-{
-	t_data	data;
+int	ft_atoi(const char *str);
+void	print_err(char *str);
 
-	check_arg(ac, av);
-	int_data(av, &data);
-	printf("Arg 1: %i, Arg 2: %d, Arg 3: %d, Arg 4: %d, Arg 5: %d\n",
-	data.nb_philo, data.time_to_die, data.time_to_eat,
-	data.time_to_sleep, data.nb_of_times_each_philo_must_eat);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/17 15:55:17 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:51:11 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,18 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "utils.h"
 
-void	print_err(char *str);
+typedef struct s_data
+{
+	int	nb_philo;
+	int	time_to_die;
+	int	time_to_eat;
+	int	time_to_sleep;
+	int	nb_of_times_each_philo_must_eat;
+}	t_data;
+
 void	check_arg(int ac, char *av[]);
+void	int_data(char *av[], t_data *data);
 
 #endif
