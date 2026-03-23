@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/20 17:56:38 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 03:24:53 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@ int	main(int ac, char *av[])
 
 	check_arg(ac, av);
 	int_data(av, &data);
-	printf("Arg 1: %i, Arg 2: %d, Arg 3: %d, Arg 4: %d, Arg 5: %d\n",
-	data.nb_philo, data.time_to_die, data.time_to_eat,
-	data.time_to_sleep, data.nb_of_times_each_philo_must_eat);
+	printf("%zu\n", data.st_time.tv_sec);
 }
