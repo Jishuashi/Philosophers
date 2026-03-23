@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:10:52 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 03:17:04 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 05:18:24 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ void	int_data(char *av[], t_data *data)
 		data->nb_of_times_each_philo_must_eat = ft_atoi(av[5]);
 	else
 		data->nb_of_times_each_philo_must_eat = -1;
+	data->forks = malloc(sizeof(pthread_mutex_t) * data->nb_philo);
+	if (!data->forks)
+	{
+		print_err("Error: Memory alloction failed");
+		exit(1);
+	}
 }

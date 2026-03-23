@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 03:27:19 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 05:03:20 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include "utils.h"
 # include <sys/time.h>
+# include <pthread.h>
 
 typedef struct s_data
 {
@@ -26,6 +27,7 @@ typedef struct s_data
 	int					time_to_eat;
 	int					time_to_sleep;
 	int					nb_of_times_each_philo_must_eat;
+	pthread_mutex_t		*forks;
 }	t_data;
 
 void	check_arg(int ac, char *av[]);
