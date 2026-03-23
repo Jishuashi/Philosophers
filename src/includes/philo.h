@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 05:03:20 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 05:53:04 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ typedef struct s_data
 	int					nb_of_times_each_philo_must_eat;
 	pthread_mutex_t		*forks;
 }	t_data;
+
+typedef	struct s_philo
+{
+	t_data			*data;
+	int				id;
+	pthread_mutex_t	*l_fork;
+	pthread_mutex_t	*r_fork;
+}	t_philo;
+
 
 void	check_arg(int ac, char *av[]);
 void	int_data(char *av[], t_data *data);
