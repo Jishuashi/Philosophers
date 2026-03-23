@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:10:52 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 06:35:10 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 19:17:33 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	int_data(char *av[], t_data *data)
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->nb_philo);
 	data->philos = (t_philo *)malloc(sizeof(t_philo) * data->nb_philo);
 	check_alloc(data);
+	ft_init_mutex(data);
 	i = 0;
 	while (i < data->nb_philo)
 	{
@@ -41,9 +42,9 @@ void	int_data(char *av[], t_data *data)
 
 static void	init_philo(t_data *data, int id)
 {
-	data->philos[id].id = id;
-	data->philos[id].r_fork = &data->forks[(id % 5)];
-	data->philos[id].l_fork = &data->forks[((id + 1) % 5)];
+	data->philos[(id)].id = (id + 1);
+	data->philos[id].r_fork = &data->forks[((id) % data->nb_philo)];
+	data->philos[id].l_fork = &data->forks[((id + 1) % data->nb_philo)];
 }
 
 static	void	check_alloc(t_data *data)

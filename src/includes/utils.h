@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:37:23 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 06:57:21 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 19:17:00 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef	struct s_data t_data;
 int			ft_atoi(const char *str);
 void		print_err(char *str);
 long long	get_ms_time(long sec, long micro);
+void		ft_init_mutex(t_data *data);
 void		ft_exit(t_data *data);
 
 #endif
