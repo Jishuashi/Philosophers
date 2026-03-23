@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   time_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/20 17:37:23 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 03:45:06 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/23 03:38:47 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/23 03:44:17 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+#include "../includes/philo.h"
 
-int			ft_atoi(const char *str);
-void		print_err(char *str);
-long long	get_ms_time(long sec, long micro);
-
-#endif
+long long	get_ms_time(long sec, long micro)
+{
+	return ((sec * 1000) + (micro / 1000));
+}

@@ -9,7 +9,7 @@ RM              = rm -rf
 OBJ_DIR         = obj
 
 SRCS            = src/philo.c 			src/utils/print_err.c	src/check_arg.c	src/init_data.c	\
-				  src/utils/ft_atoi.c
+				  src/utils/ft_atoi.c	src/utils/time_utils.c
 
 OBJS            = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 
