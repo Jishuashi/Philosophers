@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 05:53:04 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 06:46:25 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <sys/time.h>
 # include <pthread.h>
 
+typedef	struct s_philo t_philo;
+
 typedef struct s_data
 {
 	struct timeval		st_time;
@@ -28,6 +30,7 @@ typedef struct s_data
 	int					time_to_sleep;
 	int					nb_of_times_each_philo_must_eat;
 	pthread_mutex_t		*forks;
+	t_philo				*philos;
 }	t_data;
 
 typedef	struct s_philo

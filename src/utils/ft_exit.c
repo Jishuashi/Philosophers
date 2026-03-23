@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/20 17:37:23 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 06:57:21 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/23 06:36:05 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/23 06:43:55 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+#include "../includes/philo.h"
 
-typedef	struct s_data t_data;
-
-int			ft_atoi(const char *str);
-void		print_err(char *str);
-long long	get_ms_time(long sec, long micro);
-void		ft_exit(t_data *data);
-
-#endif
+void	ft_exit(t_data *data)
+{
+	free(data->forks);
+	free(data->philos);
+	exit(0);
+}

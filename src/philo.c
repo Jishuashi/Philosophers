@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 05:06:40 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 06:44:42 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ int	main(int ac, char *av[])
 
 	check_arg(ac, av);
 	int_data(av, &data);
+	ft_exit(&data);
 }
