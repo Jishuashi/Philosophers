@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   ft_init_mutex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 05:06:40 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/23 05:07:05 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/23 05:21:03 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/philo.h"
+#include "../includes/philo.h"
 
-int	main(int ac, char *av[])
+void	ft_init_mutex(t_data *data)
 {
-	t_data			data;
+	int	i;
 
-	check_arg(ac, av);
-	int_data(av, &data);
+	i = 0;
+	while (i < data->nb_philo)
+	{
+		pthread_mutex_init(&data->forks[i], NULL);
+		i++;
+	}
 }
