@@ -6,14 +6,19 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:10:52 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/23 05:18:24 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/23 06:35:10 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/philo.h"
 
+static void	init_philo(t_data *data, int id);
+static void	check_alloc(t_data *data);
+
 void	int_data(char *av[], t_data *data)
 {
+	int	i;
+	
 	gettimeofday(&data->st_time, 0);
 	data->nb_philo = ft_atoi(av[1]);
 	data->time_to_die = ft_atoi(av[2]);
@@ -24,8 +29,34 @@ void	int_data(char *av[], t_data *data)
 	else
 		data->nb_of_times_each_philo_must_eat = -1;
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->nb_philo);
-	if (!data->forks)
+	data->philos = (t_philo *)malloc(sizeof(t_philo) * data->nb_philo);
+	check_alloc(data);
+	i = 0;
+	while (i < data->nb_philo)
 	{
+		init_philo(data, i);
+		i++;
+	}
+}
+
+static void	init_philo(t_data *data, int id)
+{
+	data->philos[id].id = id;
+	data->philos[id].r_fork = &data->forks[(id % 5)];
+	data->philos[id].l_fork = &data->forks[((id + 1) % 5)];
+}
+
+static	void	check_alloc(t_data *data)
+{
+	if (!data->forks || !data->philos)
+	{
+		free(data->philos);
+		print_err("Error: Memory alloction failed");
+		exit(1);
+	}
+	if (!data->philos)
+	{
+		free(data->forks);
 		print_err("Error: Memory alloction failed");
 		exit(1);
 	}
