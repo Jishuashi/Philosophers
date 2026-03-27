@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 03:38:47 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/24 17:02:17 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:23:53 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,12 @@ long long	get_elapsed_time(t_data data)
 	gettimeofday(&end, 0);
 	return (get_ms_time(end.tv_sec, end.tv_usec)
 		- get_ms_time(data.st_time.tv_sec, data.st_time.tv_usec));
+}
+
+void	init_last_meal_time(t_philo *philo)
+{
+	struct timeval	current;
+
+	gettimeofday(&current, 0);
+	philo->last_meal = get_ms_time(current.tv_sec, current.tv_usec);
 }
