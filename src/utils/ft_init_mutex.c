@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 05:07:05 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/24 16:47:45 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:01:44 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_init_mutex(t_data *data)
 
 	pthread_mutex_init(&data->print_lock, NULL);
 	pthread_mutex_init(&data->dead_lock, NULL);
+	pthread_mutex_init(&data->meal_lock, NULL);
 	i = 0;
 	while (i < data->nb_philo)
 	{
