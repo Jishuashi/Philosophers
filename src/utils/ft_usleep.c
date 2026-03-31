@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   ft_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/31 11:02:02 by hchartie         ###   ########.fr       */
+/*   Created: 2026/03/31 10:20:53 by hchartie          #+#    #+#             */
+/*   Updated: 2026/03/31 11:06:52 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/philo.h"
+#include	"../includes/philo.h"
 
-int	main(int ac, char *av[])
+void	ft_usleep(int wait, t_data *data)
 {
-	t_data			data;
+	struct timeval	current;
+	struct timeval	start;
 
-	check_arg(ac, av);
-	int_data(av, &data);
-	ft_clean(&data);
-	return (0);
-}
-
-void	*routine(void *arg)
-{
-	t_philo	*philo;
-
-	philo = (t_philo *)arg;
-	pthread_mutex_lock(&philo->data->meal_lock);
-	init_last_meal_time(philo);
-	pthread_mutex_unlock(&philo->data->meal_lock);
-	while (check_sim(philo->data))
+	gettimeofday(&current, NULL);
+	gettimeofday(&start, NULL);
+	while ((get_ms_time(current.tv_sec, current.tv_usec) 
+	- get_ms_time(start.tv_sec, start.tv_usec)) < wait)
 	{
-		printf("Hello");
+		if(!check_sim(data))
+			break ;
+		usleep(500);
+		gettimeofday(&current, NULL);
 	}
-	return (NULL);
 }
