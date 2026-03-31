@@ -10,7 +10,12 @@ OBJ_DIR         = obj
 
 SRCS            = src/philo.c 			src/utils/print_err.c	src/check_arg.c	src/init_data.c	\
 				  src/utils/ft_atoi.c	src/utils/time_utils.c	src/utils/ft_init_mutex.c		\
+<<<<<<< HEAD
+				  src/utils/ft_clean.c	src/check_sim.c			src/utils/ft_usleep.c			\
+
+=======
 				  src/utils/ft_clean.c
+>>>>>>> 14d7b34c8f5b1743603952c15c441673c4fed0ae
 OBJS            = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 
 GREEN           = \033[0;32m
