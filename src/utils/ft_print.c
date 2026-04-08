@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 12:49:36 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/31 13:37:34 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:45:35 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_print(t_data *data, int id, char name)
 		if (name == 'f')
 			printf("%lld %d has taken a fork\n", get_elapsed_time(data), id);
 		if (name == 't')
-			printf("%lld %d is thinking\n", get_elapsed_time(data), id);	
+			printf("%lld %d is thinking\n", get_elapsed_time(data), id);
 	}
 	pthread_mutex_unlock(&data->print_lock);
 }

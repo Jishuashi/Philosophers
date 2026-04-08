@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/31 12:48:11 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/04/08 11:39:34 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	check_arg(int ac, char *av[]);
 void	int_data(char *av[], t_data *data);
 void	*routine(void *arg);
 int		check_sim(t_data *data);
+void	monitor(t_data *data);
 
 #endif
