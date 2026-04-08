@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:37:23 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/31 13:43:08 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/04/08 12:51:51 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void		ft_clean(t_data *data);
 long long	get_elapsed_time(t_data *data);
 void		init_last_meal_time(t_philo *philo);
 void		ft_print(t_data *data, int id, char name);
+void		ft_usleep(int wait, t_data *data);
 
 #endif
