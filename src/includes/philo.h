@@ -6,11 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/03/27 04:25:48 by hchartie         ###   ########.fr       */
-=======
-/*   Updated: 2026/03/24 19:25:05 by hchartie         ###   ########.fr       */
->>>>>>> 14d7b34c8f5b1743603952c15c441673c4fed0ae
+/*   Updated: 2026/04/08 11:39:34 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +49,7 @@ typedef struct s_philo
 void	check_arg(int ac, char *av[]);
 void	int_data(char *av[], t_data *data);
 void	*routine(void *arg);
-<<<<<<< HEAD
 int		check_sim(t_data *data);
-=======
->>>>>>> 14d7b34c8f5b1743603952c15c441673c4fed0ae
+void	monitor(t_data *data);
 
 #endif

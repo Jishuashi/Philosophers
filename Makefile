@@ -11,6 +11,7 @@ OBJ_DIR         = obj
 SRCS            = src/philo.c 			src/utils/print_err.c	src/check_arg.c	src/init_data.c	\
 				  src/utils/ft_atoi.c	src/utils/time_utils.c	src/utils/ft_init_mutex.c		\
 				  src/utils/ft_clean.c	src/check_sim.c			src/utils/ft_usleep.c			\
+				  src/utils/ft_print.c
 
 OBJS            = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 
