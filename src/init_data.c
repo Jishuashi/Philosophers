@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:10:52 by hchartie          #+#    #+#             */
-/*   Updated: 2026/03/31 12:48:30 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/04/10 17:08:15 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static void	init_philo(t_data *data, int id)
 	data->philos[id].r_fork = &data->forks[((id) % data->nb_philo)];
 	data->philos[id].l_fork = &data->forks[((id + 1) % data->nb_philo)];
 	data->philos[id].data = data;
+	data->philos[id].last_meal = get_ms_time(data->st_time.tv_sec,
+			data->st_time.tv_usec);
 }
 
 static	void	check_alloc(t_data *data)

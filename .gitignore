@@ -13,3 +13,4 @@ testcmd
 outfiles
 infiles
 test
+*.txt

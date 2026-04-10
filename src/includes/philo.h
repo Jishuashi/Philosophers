@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/08 11:39:34 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/04/10 16:12:22 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_philo
 	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	*r_fork;
 	long long		last_meal;
+	pthread_t		id_t;
 }	t_philo;
 
 void	check_arg(int ac, char *av[]);
