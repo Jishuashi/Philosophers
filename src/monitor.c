@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:51:33 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/08 11:45:09 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/04/10 17:36:00 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	monitor(t_data *data)
 			if (check_mon(data, i))
 			{
 				ft_print(data, data->philos[i].id, 'd');
-				break ;
+				return ;
 			}
 			i++;
 		}
