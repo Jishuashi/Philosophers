@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 17:10:52 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/10 17:08:15 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/05/11 13:09:47 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	int_data(char *av[], t_data *data)
 	data->time_to_sleep = ft_atoi(av[4]);
 	data->sim_sp = 0;
 	if (av[5])
-		data->nb_of_times_each_philo_must_eat = ft_atoi(av[5]);
+		data->nb_must_eat = ft_atoi(av[5]);
 	else
-		data->nb_of_times_each_philo_must_eat = -1;
+		data->nb_must_eat = -1;
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->nb_philo);
 	data->philos = (t_philo *)malloc(sizeof(t_philo) * data->nb_philo);
 	check_alloc(data);
@@ -49,6 +49,7 @@ static void	init_philo(t_data *data, int id)
 	data->philos[id].data = data;
 	data->philos[id].last_meal = get_ms_time(data->st_time.tv_sec,
 			data->st_time.tv_usec);
+	data->philos[id].nb_meal = 0;
 }
 
 static	void	check_alloc(t_data *data)

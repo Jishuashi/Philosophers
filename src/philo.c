@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:36:25 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/10 17:47:50 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/05/11 13:06:06 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	*routine(void *arg)
 	philo = (t_philo *)arg;
 	if (philo->id % 2 == 1)
 		usleep(1000);
-	pthread_mutex_lock(&philo->data->meal_lock);
-	pthread_mutex_unlock(&philo->data->meal_lock);
 	while (check_sim(philo->data))
 	{
 		take_fork(philo);
@@ -58,6 +56,9 @@ void	*routine(void *arg)
 		ft_print(philo->data, philo->id, 'e');
 		ft_usleep(philo->data->time_to_eat, philo->data);
 		drop_fork(philo);
+		if (philo->data->nb_must_eat != -1 
+			&& philo->nb_meal >= philo->data->nb_must_eat)
+			break ;
 		ft_print(philo->data, philo->id, 's');
 		ft_usleep(philo->data->time_to_sleep, philo->data);
 		ft_print(philo->data, philo->id, 't');
@@ -92,5 +93,6 @@ static void	update_meal(t_philo *philo)
 	gettimeofday(&current, NULL);
 	pthread_mutex_lock(&philo->data->meal_lock);
 	philo->last_meal = get_ms_time(current.tv_sec, current.tv_usec);
+	philo->nb_meal++;
 	pthread_mutex_unlock(&philo->data->meal_lock);
 }

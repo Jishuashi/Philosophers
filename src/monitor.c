@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:51:33 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/10 17:36:00 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/05/11 13:06:06 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,35 @@ static int	check_mon(t_data *data, int idx);
 
 void	monitor(t_data *data)
 {
-	int					i;
+	int		i;
+	int		finished_eating;
+	t_philo	current;
 
 	while (check_sim(data))
 	{
 		i = 0;
+		finished_eating = 0;
 		while (i < data->nb_philo)
 		{
-			if (check_mon(data, i))
+			pthread_mutex_lock(&data->meal_lock);
+			current = data->philos[i];
+			pthread_mutex_unlock(&data->meal_lock);
+			if (data->nb_must_eat != -1
+				&& current.nb_meal >= data->nb_must_eat)
+				finished_eating++;
+			else if (check_mon(data, i))
 			{
-				ft_print(data, data->philos[i].id, 'd');
+				ft_print(data, current.id, 'd');
 				return ;
 			}
 			i++;
+		}
+		if (data->nb_must_eat != -1 && finished_eating == data->nb_philo)
+		{
+			pthread_mutex_lock(&data->dead_lock);
+			data->sim_sp = 1;
+			pthread_mutex_unlock(&data->dead_lock);
+			return ;
 		}
 		usleep(1000);
 	}

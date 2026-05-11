@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:32:38 by hchartie          #+#    #+#             */
-/*   Updated: 2026/04/10 16:12:22 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/05/11 12:49:19 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_data
 	int					time_to_die;
 	int					time_to_eat;
 	int					time_to_sleep;
-	int					nb_of_times_each_philo_must_eat;
+	int					nb_must_eat;
 	int					sim_sp;
 	pthread_mutex_t		print_lock;
 	pthread_mutex_t		dead_lock;
@@ -44,6 +44,7 @@ typedef struct s_philo
 	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	*r_fork;
 	long long		last_meal;
+	int				nb_meal;
 	pthread_t		id_t;
 }	t_philo;
 
