@@ -56,7 +56,7 @@ void	*routine(void *arg)
 		ft_print(philo->data, philo->id, 'e');
 		ft_usleep(philo->data->time_to_eat, philo->data);
 		drop_fork(philo);
-		if (philo->data->nb_must_eat != -1 
+		if (philo->data->nb_must_eat != -1
 			&& philo->nb_meal >= philo->data->nb_must_eat)
 			break ;
 		ft_print(philo->data, philo->id, 's');
